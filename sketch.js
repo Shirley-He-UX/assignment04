@@ -27,14 +27,14 @@ function draw() {
   rotate(270);
   fill(generateColour());
   noStroke();
-  ellipse(0, 0,390);
+  ellipse(0, 0,384);
   
-  fill(255,255,255,100)
-  textSize(9);
-  for(var i = 1; i<13; i++) {
-    rotate(30);
-    text(i,180,0);
-  }
+  // fill(255,255,255,100)
+  // textSize(9);
+  // for(var i = 1; i<13; i++) {
+  //   rotate(30);
+  //   text(i,180,0);
+  // }
   
   fill(255);
 
@@ -86,13 +86,13 @@ function clockText() {
   
   if (h> 12) {
       if(h>22){
-       return (h-12)+" : "+m2+" : "+s+"   P.M.";
+       return (h-12)+" : "+m2+" : "+s+"   PM";
       }else{
-       return "0"+ (h-12)+" : "+m2+" : "+s+"   P.M.";
+       return "0"+ (h-12)+" : "+m2+" : "+s+"   PM";
       }
   
   }else{
-    return h+" : "+m2+" : "+s+"   A.M.";
+    return h+" : "+m2+" : "+s+"   AM";
     
     
   }
