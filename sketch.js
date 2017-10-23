@@ -56,8 +56,13 @@ function draw() {
   push();
   fill(0);
   rotate(270);
-
   pop();
+  
+  push();
+  translate(-5,5);
+  dial();
+  pop();
+
 }
 
 function keyPressed() {
@@ -124,6 +129,21 @@ function clockHand() {
 
 }
 
+function dial(){
+  this.fill(255,255,255,100);
+  this.r = 180;
+  for(var i =1; i<13; i++){
+    if(i%3==0){
+    textSize(14);
+    text(i,r*cos(i*30+270),r*sin(i*30+270));
+    }
+    else{
+      textSize(8);
+    text("+",r*cos(i*30+270),r*sin(i*30+270));
+    }
+  }
+     
+}
 
 function generateColour() {
     var hex = '#';
