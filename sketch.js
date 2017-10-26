@@ -1,11 +1,14 @@
+var backgroudColor, clockColor, tcolor;
+
 
 function setup() {
   createCanvas(500,500);
   //textFont('Futura');
   angleMode(DEGREES);
-  frameRate(1);
-
-  
+  //frameRate(1);
+  backgroudColor = generateColour();
+  clockColor = generateColour();
+  tcolor = clockColor;
   // Create canvas, set angle mode, etc.
 }
 
@@ -13,7 +16,7 @@ function setup() {
 
 function draw() {
   translate(width/2, height/2-20);
-  background(generateColour());
+  background(color(backgroudColor));
     
   fill(255,255,255,255);
   textSize(22);
@@ -25,7 +28,7 @@ function draw() {
 
   push();
   rotate(270);
-  fill(generateColour());
+  fill(color(clockColor));
   noStroke();
   ellipse(0, 0,384);
   
@@ -47,7 +50,7 @@ function draw() {
     
   fill(255);
   textSize(22);
-  text(generateColour(), -44, 20);
+  text(tcolor, -44, 20);
   
   textSize(10);
   text('     Press any key \n to change the color', -44, -22);
@@ -66,7 +69,10 @@ function draw() {
 }
 
 function keyPressed() {
-  redraw(); 
+  
+  backgroudColor = clockColor;
+  clockColor = generateColour();
+  tcolor = clockColor;
 }
 
 
